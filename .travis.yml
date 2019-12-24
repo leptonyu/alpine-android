@@ -8,7 +8,7 @@ env:
     - AS_DEF=true
   matrix:
     - NAME: android
-      VERSION: alpine
+      VERSION: 29-alpine
 
 script:
   - docker build -t $DOCKER_USERNAME/$NAME:$VERSION --build-arg name=$NAME --build-arg ver=$VERSION ${DIR:-$NAME}

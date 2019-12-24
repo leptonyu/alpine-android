@@ -1,7 +1,7 @@
 FROM adoptopenjdk/openjdk8:alpine-slim
 
-ENV BUILD_TOOLS "28.0.3"
-ENV TARGET_SDK "28"
+ENV BUILD_TOOLS "29.0.2"
+ENV TARGET_SDK "29"
 ENV SDK_TOOLS "4333796"
 ENV ANDROID_HOME "/opt/sdk"
 ENV GRADLE_HOME /opt/gradle
