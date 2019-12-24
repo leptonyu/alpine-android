@@ -1,0 +1,20 @@
+language: generic
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_USERNAME=icymint
+    - AS_DEF=true
+  matrix:
+    - NAME: android
+      VERSION: alpine
+
+script:
+  - docker build -t $DOCKER_USERNAME/$NAME:$VERSION --build-arg name=$NAME --build-arg ver=$VERSION ${DIR:-$NAME}
+
+deploy:
+  provider: script
+  script: bash deploy.sh
+  on:
+    branch: master
